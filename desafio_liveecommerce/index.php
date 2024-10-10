@@ -103,7 +103,7 @@ Class Emprestimos extends Livros{
 
     function AtualizarEmprestimos($array){
         try{
-            $stmt = "UPDATE Emprestimos SET STATUS = " . $array['Status'] . " WHERE IdLivro = " . $array['IdLivro'] . " AND IdCLiente = " . $array['IdCliente'] . " AND Status = 1";
+            $stmt = "UPDATE Emprestimos SET STATUS = " . $array['Status'] . " , Data = datetime('now') WHERE IdLivro = " . $array['IdLivro'] . " AND IdCLiente = " . $array['IdCliente'] . " AND Status = 1";
             $this->exec($stmt);
         
         }catch(Exception $e){
